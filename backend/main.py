@@ -2,11 +2,20 @@ from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
 import models
 from database import engine, get_db
+from fastapi.middleware.cors import CORSMiddleware
 
 # Create the tables in the database
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"], # Allow Next.js
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def read_root():

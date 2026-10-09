@@ -3,6 +3,7 @@ import requests
 from dotenv import load_dotenv
 from database import SessionLocal, engine, Base
 import models
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 API_KEY = os.getenv("RAWG_API_KEY")
