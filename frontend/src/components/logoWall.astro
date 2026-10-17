@@ -1,0 +1,42 @@
+---
+// Tech stack strip. Names must match files in /public/svg (case-sensitive).
+const technologies = [
+  { file: "astro", label: "Astro" },
+  { file: "react", label: "React" },
+  { file: "typeScript", label: "TypeScript" },
+  { file: "tailwindcss", label: "Tailwind CSS" },
+  { file: "javaScript", label: "JavaScript" },
+  { file: "HTML5", label: "HTML5" },
+  { file: "CSS3", label: "CSS3" },
+  { file: "git", label: "Git" },
+];
+---
+
+<div class="relative overflow-x-hidden py-8" aria-label="Technologies used">
+  <div class="pointer-events-none absolute inset-y-0 left-0 w-32 bg-linear-to-r from-[var(--background)] to-transparent z-20"></div>
+  <div class="pointer-events-none absolute inset-y-0 right-0 w-32 bg-linear-to-l from-[var(--background)] to-transparent z-20"></div>
+
+  <div class="flex animate-scroll w-max will-change-transform">
+    {
+      [...technologies, ...technologies].map((tech, index) => (
+        <div
+          class="flex items-center gap-2 pr-12 md:pr-20 group transition-all duration-300"
+          aria-hidden={index >= technologies.length ? "true" : "false"}
+        >
+          <img
+            src={`/svg/${tech.file}.svg`}
+            alt=""
+            class="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
+            width="30"
+            height="30"
+            loading={index < technologies.length ? "eager" : "lazy"}
+            decoding="async"
+          />
+          <span class="text-lg font-medium text-[var(--white-icon)] whitespace-nowrap">
+            {tech.label}
+          </span>
+        </div>
+      ))
+    }
+  </div>
+</div>

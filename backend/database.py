@@ -1,18 +1,14 @@
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
+if not DATABASE_URL:
+    raise RuntimeError("DATABASE_URL must be configured")
 
 engine = create_engine(DATABASE_URL)
-
-# NEW: Automatically enable the pgvector extension on the database
-with engine.connect() as conn:
-    conn.execute(text("CREATE EXTENSION IF NOT EXISTS vector"))
-    conn.commit()
-
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
@@ -21,4 +17,4 @@ def get_db():
     try:
         yield db
     finally:
-        db.close()
+        db.close() 

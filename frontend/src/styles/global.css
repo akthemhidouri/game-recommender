@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Montserrat Variable";
+  src: url("/fonts/montserrat-latin-wght-normal.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Montserrat Variable", -apple-system, system-ui, sans-serif;
+  --animate-scroll: scroll 60s linear infinite;
+}
+
+:root {
+  --background: #101010;
+  --component-bg: #141414;
+  --sec: #a476ff;
+  --white: #dfdfdf;
+  --white-icon: #f3f3f398;
+  --white-icon-tr: #f3f3f310;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--white);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: var(--sec);
+  color: var(--background);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 10px;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2a2a var(--background);
+}
+
+@keyframes scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes shine {
+  0% { background-position: 100% 50%; }
+  30%, 70% { background-position: 0% 50%; }
+}
+
+.shiny-sec {
+  background: linear-gradient(135deg, #a476ff 25%, #eee5ff 50%, #a476ff 75%);
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fade-up 0.4s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shiny-sec, .fade-up, .animate-scroll { animation: none; }
+  html { scroll-behavior: auto; }
+}

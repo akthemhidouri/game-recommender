@@ -1,0 +1,54 @@
+---
+const currentYear = new Date().getFullYear();
+
+const links = [
+  { href: "#home", label: "Home" },
+  { href: "#recommend", label: "Recommend" },
+  { href: "#browse", label: "Browse" },
+  { href: "#how-it-works", label: "How it works" },
+];
+---
+
+<footer class="w-full py-12 border-t border-[#ffffff10]">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex flex-col items-center gap-6 md:flex-row md:justify-between">
+      <p class="text-lg font-semibold text-[var(--white)]">GameMatch</p>
+      <ul class="flex flex-wrap justify-center gap-6">
+        {
+          links.map((l) => (
+            <li>
+              <a
+                href={l.href}
+                class="text-[var(--white-icon)] hover:text-[var(--white)] transition duration-300 ease-in-out"
+              >
+                {l.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-[#ffffff10]">
+      <p class="text-center text-sm text-[var(--white-icon)]">
+        <!-- MIT License: keep the original copyright notice below -->
+        <span class="block sm:inline">
+          Copyright © {currentYear} GameMatch. Based on the Dark Minimal template by
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-[var(--white)] transition duration-300 ease-in-out underline"
+            href="https://github.com/Gothsec">Andres Hernandez</a
+          >, distributed by
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-[var(--white)] transition duration-300 ease-in-out underline"
+            href="https://themewagon.com">ThemeWagon</a
+          >.
+        </span>
+        <span class="block mt-2">Game data provided by RAWG.</span>
+      </p>
+    </div>
+  </div>
+</footer>

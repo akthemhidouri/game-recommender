@@ -1,0 +1,15 @@
+---
+import Recommender from "../React/Recommender.tsx";
+---
+
+<section id="recommend" class="py-12 border-t border-[#ffffff10] text-[var(--white)] scroll-mt-24">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">Personalised for you</h2>
+    <h3 class="text-4xl md:text-5xl font-medium mb-3">Get recommendations</h3>
+    <p class="mb-8 max-w-2xl text-[var(--white-icon)]">
+      Add the games you have enjoyed. We compare their descriptions, genres and
+      tags, then rank similar games you have not played yet.
+    </p>
+    <Recommender client:load />
+  </div>
+</section>

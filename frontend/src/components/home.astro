@@ -1,0 +1,53 @@
+---
+import LetterGlitch from "../React/LetterGlitch.tsx";
+import LogoWall from "./logoWall.astro";
+---
+
+<section class="text-[var(--white)] mt-12 md:mt-0" id="home">
+  <div class="max-w-5xl mx-auto space-y-8 md:py-36 pb-14">
+    <div class="text-left space-y-4">
+      <p class="text-md md:text-lg text-[var(--white-icon)] shiny-sec">
+        Welcome to GameMatch
+      </p>
+      <div class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-8 md:gap-4">
+        <h1 class="text-[var(--white)] text-4xl md:text-5xl font-medium leading-tight lg:shrink-0">
+          Find your next <br class="hidden lg:block" /> favourite game
+        </h1>
+        <p class="text-md md:text-2xl text-[var(--white-icon)]">
+          Tell us what you have played and get personalised picks, with a clear
+          explanation of <span class="text-[var(--sec)] shiny-sec">why</span> each
+          one fits you.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3 pt-3 md:pt-6">
+        <a
+          href="#recommend"
+          class="rounded-xl bg-[var(--sec)] px-6 py-3 font-semibold text-[var(--background)] transition hover:brightness-110"
+        >
+          Get recommendations
+        </a>
+        <a
+          href="#browse"
+          class="rounded-xl border border-[var(--white-icon-tr)] bg-[#1414149c] px-6 py-3 text-[var(--white-icon)] transition hover:bg-[var(--white-icon-tr)] hover:text-white"
+        >
+          Browse games
+        </a>
+      </div>
+    </div>
+
+    <LogoWall />
+
+    <div class="flex justify-center">
+      <div class="md:w-full md:h-[260px] w-full h-[200px] overflow-hidden rounded-2xl border border-[var(--white-icon-tr)]" aria-hidden="true">
+        <LetterGlitch
+          client:visible
+          glitchColors={["#5e4491", "#A476FF", "#241a38"]}
+          glitchSpeed={33}
+          centerVignette={false}
+          outerVignette={true}
+          smooth={true}
+        />
+      </div>
+    </div>
+  </div>
+</section>

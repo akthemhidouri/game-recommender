@@ -1,5 +1,5 @@
 from sentence_transformers import SentenceTransformer
-from database import SessionLocal
+from database import get_db
 import models
 
 # Load the model (it will download automatically the first time)
@@ -7,7 +7,7 @@ print("Loading embedding model...")
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
 def generate_all_embeddings():
-    db = SessionLocal()
+    db = get_db()
     try:
         games = db.query(models.Game).filter(models.Game.embedding.is_(None)).all()
         
