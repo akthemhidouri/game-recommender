@@ -2,10 +2,18 @@
 import GameBrowser from "../React/GameBrowser.tsx";
 ---
 
-<section id="browse" class="py-12 border-t border-[#ffffff10] text-[var(--white)] scroll-mt-24">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">The library</h2>
-    <h3 class="text-4xl md:text-5xl font-medium mb-8">Browse games</h3>
+<section id="browse" class="scroll-mt-24 border-t border-white/10 py-20 text-[var(--white)] md:py-28">
+  <div class="mx-auto max-w-6xl">
+    <div class="mb-9 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <div>
+        <p class="section-kicker mb-3">Find a new favourite</p>
+        <h2 class="text-4xl font-semibold tracking-[-0.045em] md:text-5xl">Explore the library.</h2>
+      </div>
+      <p class="max-w-md text-sm leading-6 text-[var(--white-icon)]">
+        Search the collection, filter by genre, and add games you’ve played to
+        shape your recommendations.
+      </p>
+    </div>
     <GameBrowser client:visible />
   </div>
 </section>

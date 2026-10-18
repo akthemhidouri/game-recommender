@@ -1,52 +1,93 @@
 ---
-import LetterGlitch from "../React/LetterGlitch.tsx";
-import LogoWall from "./logoWall.astro";
 ---
 
-<section class="text-[var(--white)] mt-12 md:mt-0" id="home">
-  <div class="max-w-5xl mx-auto space-y-8 md:py-36 pb-14">
-    <div class="text-left space-y-4">
-      <p class="text-md md:text-lg text-[var(--white-icon)] shiny-sec">
-        Welcome to GameMatch
+<section class="relative mx-auto max-w-6xl pb-20 pt-32 text-[var(--white)] md:pb-28 md:pt-40" id="home">
+  <div class="pointer-events-none absolute -right-40 top-28 h-96 w-96 rounded-full bg-[#b5f05a]/10 blur-[120px]" aria-hidden="true"></div>
+  <div class="relative grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+    <div class="space-y-7">
+      <p class="section-kicker">A smarter way to find your next game</p>
+      <h1 class="max-w-3xl text-5xl font-semibold leading-[1.02] tracking-[-0.06em] sm:text-6xl lg:text-7xl">
+        Your next favourite is <span class="text-[var(--sec)]">out there.</span>
+      </h1>
+      <p class="max-w-xl text-base leading-7 text-[var(--white-icon)] md:text-lg">
+        Tell us what you love. GameMatch reads the signals across genres, tags
+        and game descriptions to find your next obsession—and shows you why it fits.
       </p>
-      <div class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-8 md:gap-4">
-        <h1 class="text-[var(--white)] text-4xl md:text-5xl font-medium leading-tight lg:shrink-0">
-          Find your next <br class="hidden lg:block" /> favourite game
-        </h1>
-        <p class="text-md md:text-2xl text-[var(--white-icon)]">
-          Tell us what you have played and get personalised picks, with a clear
-          explanation of <span class="text-[var(--sec)] shiny-sec">why</span> each
-          one fits you.
-        </p>
-      </div>
-      <div class="flex flex-wrap gap-3 pt-3 md:pt-6">
+      <div class="flex flex-wrap gap-3 pt-1">
         <a
           href="#recommend"
-          class="rounded-xl bg-[var(--sec)] px-6 py-3 font-semibold text-[var(--background)] transition hover:brightness-110"
+          class="inline-flex items-center gap-3 rounded-full bg-[var(--sec)] px-6 py-3.5 text-sm font-bold text-[#11160c] transition hover:-translate-y-0.5 hover:brightness-105"
         >
-          Get recommendations
+          Find my next game <span aria-hidden="true">↗</span>
         </a>
         <a
           href="#browse"
-          class="rounded-xl border border-[var(--white-icon-tr)] bg-[#1414149c] px-6 py-3 text-[var(--white-icon)] transition hover:bg-[var(--white-icon-tr)] hover:text-white"
+          class="rounded-full border border-white/15 px-6 py-3.5 text-sm font-semibold text-[var(--white)] transition hover:border-white/35 hover:bg-white/5"
         >
-          Browse games
+          Explore the library
         </a>
+      </div>
+      <div class="flex flex-wrap gap-x-7 gap-y-3 pt-4 text-xs font-medium uppercase tracking-[0.14em] text-[var(--white-icon)]">
+        <span><span class="mr-2 text-[var(--sec)]">01</span>Pick your games</span>
+        <span><span class="mr-2 text-[var(--sec)]">02</span>See your matches</span>
+        <span><span class="mr-2 text-[var(--sec)]">03</span>Find your next world</span>
       </div>
     </div>
 
-    <LogoWall />
+    <div class="relative mx-auto w-full max-w-lg lg:ml-auto">
+      <div class="absolute -inset-5 rounded-[2rem] bg-gradient-to-br from-[#c5f36a]/15 via-transparent to-[#79a9ff]/10 blur-2xl" aria-hidden="true"></div>
+      <div class="glass-panel relative overflow-hidden rounded-[1.7rem] p-4 sm:p-5">
+        <div class="flex items-center justify-between border-b border-white/10 px-1 pb-4">
+          <div>
+            <p class="section-kicker !text-[0.6rem]">Taste profile</p>
+            <p class="mt-1 text-sm font-semibold">Your next-play radar</p>
+          </div>
+          <span class="flex items-center gap-2 rounded-full border border-[#c5f36a]/20 bg-[#c5f36a]/[0.08] px-3 py-1.5 text-[0.65rem] font-semibold text-[var(--sec)]">
+            <span class="h-1.5 w-1.5 rounded-full bg-[var(--sec)]"></span>
+            HOW IT WORKS
+          </span>
+        </div>
 
-    <div class="flex justify-center">
-      <div class="md:w-full md:h-[260px] w-full h-[200px] overflow-hidden rounded-2xl border border-[var(--white-icon-tr)]" aria-hidden="true">
-        <LetterGlitch
-          client:visible
-          glitchColors={["#5e4491", "#A476FF", "#241a38"]}
-          glitchSpeed={33}
-          centerVignette={false}
-          outerVignette={true}
-          smooth={true}
-        />
+        <div class="relative mt-4 overflow-hidden rounded-2xl border border-white/10 bg-[#12191a] p-5 sm:p-6">
+          <div class="pointer-events-none absolute inset-0 opacity-70" aria-hidden="true" style="background: radial-gradient(ellipse at 75% 10%, #b5f05a33, transparent 35%), radial-gradient(ellipse at 10% 100%, #7894d533, transparent 45%);"></div>
+          <div class="relative">
+            <p class="text-[0.65rem] uppercase tracking-[0.18em] text-white/55">Signals from your games</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full border border-white/15 bg-black/20 px-3 py-1.5 text-xs">Atmospheric worlds</span>
+              <span class="rounded-full border border-white/15 bg-black/20 px-3 py-1.5 text-xs">Rich stories</span>
+              <span class="rounded-full border border-white/15 bg-black/20 px-3 py-1.5 text-xs">Action RPG</span>
+            </div>
+
+            <div class="my-6 flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.16em] text-white/40">
+              <span class="h-px flex-1 bg-white/10"></span>
+              Match found
+              <span class="h-px flex-1 bg-white/10"></span>
+            </div>
+
+            <div class="flex items-center gap-4 rounded-xl border border-white/10 bg-black/25 p-3">
+              <div class="flex h-16 w-12 shrink-0 items-end rounded-lg border border-white/10 p-1.5" style="background: linear-gradient(155deg, #667b69, #252d2a 48%, #111514);">
+                <span class="text-[0.48rem] font-bold uppercase leading-tight tracking-wider text-white/80">New<br/>world</span>
+              </div>
+              <div class="min-w-0 flex-1">
+                <p class="text-xs text-white/50">A discovery shaped by your taste</p>
+                <p class="mt-1 truncate text-base font-semibold">Your next adventure</p>
+                <p class="mt-1 text-xs text-[var(--sec)]">Because it shares your story-driven side</p>
+              </div>
+              <div class="shrink-0 text-right">
+                <p class="text-lg font-semibold text-[var(--sec)]">92%</p>
+                <p class="text-[0.58rem] uppercase tracking-wider text-white/40">match</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="px-1 pt-4 text-xs leading-5 text-white/45">
+          Illustrative preview. Real recommendations are generated from the games you add.
+        </p>
+      </div>
+      <div class="absolute -bottom-5 -left-4 hidden rounded-xl border border-white/10 bg-[#11161a] px-4 py-3 shadow-xl sm:block">
+        <p class="text-[0.58rem] uppercase tracking-[0.16em] text-white/40">Discovery mode</p>
+        <p class="mt-1 text-xs font-semibold"><span class="mr-2 text-[var(--sec)]">●</span>Built around you</p>
       </div>
     </div>
   </div>

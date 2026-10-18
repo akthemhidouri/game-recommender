@@ -14,22 +14,31 @@
 }
 
 :root {
-  --background: #101010;
-  --component-bg: #141414;
-  --sec: #a476ff;
-  --white: #dfdfdf;
-  --white-icon: #f3f3f398;
-  --white-icon-tr: #f3f3f310;
+  --background: #080a0d;
+  --component-bg: #11161a;
+  --sec: #c5f36a;
+  --white: #f1f3ed;
+  --white-icon: #c0c7c2;
+  --white-icon-tr: #f1f3ed1a;
 }
 
 html {
   scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
-  background-color: var(--background);
+  min-width: 320px;
+  background:
+    radial-gradient(ellipse at 78% 8%, #20332255 0, transparent 38rem),
+    radial-gradient(ellipse at 8% 45%, #16212a44 0, transparent 34rem),
+    var(--background);
   color: var(--white);
   font-family: var(--font-sans);
+}
+
+.site-shell {
+  overflow: clip;
 }
 
 ::selection {
@@ -63,7 +72,7 @@ body {
 }
 
 .shiny-sec {
-  background: linear-gradient(135deg, #a476ff 25%, #eee5ff 50%, #a476ff 75%);
+  background: linear-gradient(135deg, #c5f36a 25%, #f1f3ed 50%, #c5f36a 75%);
   background-size: 400% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -77,6 +86,21 @@ body {
 }
 .fade-up {
   animation: fade-up 0.4s ease-out both;
+}
+
+.section-kicker {
+  color: var(--sec);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.glass-panel {
+  border: 1px solid #ffffff18;
+  background: linear-gradient(145deg, #151a1dde, #0d1013e8);
+  box-shadow: 0 24px 80px #00000040;
+  backdrop-filter: blur(18px);
 }
 
 @media (prefers-reduced-motion: reduce) {

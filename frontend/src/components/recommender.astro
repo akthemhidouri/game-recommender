@@ -2,14 +2,20 @@
 import Recommender from "../React/Recommender.tsx";
 ---
 
-<section id="recommend" class="py-12 border-t border-[#ffffff10] text-[var(--white)] scroll-mt-24">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">Personalised for you</h2>
-    <h3 class="text-4xl md:text-5xl font-medium mb-3">Get recommendations</h3>
-    <p class="mb-8 max-w-2xl text-[var(--white-icon)]">
-      Add the games you have enjoyed. We compare their descriptions, genres and
-      tags, then rank similar games you have not played yet.
-    </p>
-    <Recommender client:load />
+<section id="recommend" class="scroll-mt-24 border-t border-white/10 py-20 text-[var(--white)] md:py-28">
+  <div class="mx-auto max-w-6xl">
+    <div class="mb-9 grid gap-5 md:grid-cols-[0.8fr_1.2fr] md:items-end">
+      <div>
+        <p class="section-kicker mb-3">Start your discovery</p>
+        <h2 class="text-4xl font-semibold tracking-[-0.045em] md:text-5xl">Build your taste profile.</h2>
+      </div>
+      <p class="max-w-xl text-sm leading-6 text-[var(--white-icon)] md:justify-self-end md:text-base">
+        Add a few games you’ve played. We’ll use their descriptions, genres and
+        tags to find strong matches—and explain what connects them.
+      </p>
+    </div>
+    <div class="glass-panel rounded-3xl p-4 sm:p-7 md:p-8">
+      <Recommender client:load />
+    </div>
   </div>
 </section>
